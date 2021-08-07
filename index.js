@@ -51,4 +51,8 @@ app.post('/responder' , (req, res) => {
     var perguntaId = req.body.pergunta
     modelResposta.create({corpo:corpo, perguntaId:perguntaId}).then(()=>{res.redirect('/pergunta/'+perguntaId)})
 })
-app.listen(8080, () => {console.log('App Rodando')});
+
+
+const PORT = process.env.PORT || 3333;
+
+app.listen(PORT, ()=>{console.log("App Rodando" + PORT)})
